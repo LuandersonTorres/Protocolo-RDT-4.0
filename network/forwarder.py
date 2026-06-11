@@ -22,45 +22,125 @@ Ponto de extensão (Pessoa 4):
   Retornar None equivale a DROPAR o datagrama.
   Retornar bytes (possivelmente modificados) equivale a encaminhar.
 """
-
 import select
+import time
 from typing import Optional
 
 import rdt_utils
 from network.ack_socket import AckSocket
 from network.data_socket import DataSocket
-from utils.constants import FLAG_ACK
+from utils.constants import FLAG_ACK, ATRASO_B_MS
 from utils.logger import log
 
 # ── Pontos de extensão (substituídos pela Pessoa 4) ───────────────────────────
 
 
 def process_packet(packet: bytes) -> Optional[bytes]:
-    """Aplica a ação do menu de falhas ao pacote de dados.
-
-    Pessoa 4 substituirá este corpo pela lógica real do menu.
-
-    Args:
-        packet: Bytes brutos recebidos de A, antes de qualquer alteração.
-
-    Returns:
-        Bytes a encaminhar para C, ou None para DROPAR o pacote.
     """
-    return packet
+    Simula falhas em pacotes de dados enviados por A.
+
+    Opções:
+    1 - Encaminhar normalmente
+    2 - Corromper pacote
+    3 - Atrasar pacote
+    4 - Dropar pacote
+
+    Retorna:
+        bytes -> pacote encaminhado para C
+        None  -> pacote descartado
+    """
+
+    print("\n===== MENU PACOTE =====")
+    print("1 - Encaminhar normalmente")
+    print("2 - Corromper pacote")
+    print("3 - Atrasar pacote")
+    print("4 - Dropar pacote")
+    print("=======================")
+
+    opcao = input("Escolha: ")
+
+    if opcao == "1":
+        print("[B] Encaminhando normalmente")
+        return packet
+
+    elif opcao == "2":
+        print("[B] Corrompendo pacote")
+
+        pacote_corrompido = bytearray(packet)
+
+        if len(pacote_corrompido) > 0:
+            pacote_corrompido[-1] ^= 0xFF
+
+        return bytes(pacote_corrompido)
+
+    elif opcao == "3":
+        print(f"[B] Atrasando pacote por {ATRASO_B_MS} ms")
+
+        time.sleep(ATRASO_B_MS / 1000)
+
+        return packet
+
+    elif opcao == "4":
+        print("[B] Pacote descartado")
+        return None
+
+    else:
+        print("[B] Opção inválida -> encaminhando normalmente")
+        return packet
 
 
 def process_ack(ack: bytes) -> Optional[bytes]:
-    """Aplica a ação do menu de falhas ao ACK.
-
-    Pessoa 4 substituirá este corpo pela lógica real do menu.
-
-    Args:
-        ack: Bytes brutos recebidos de C, antes de qualquer alteração.
-
-    Returns:
-        Bytes a encaminhar para A, ou None para DROPAR o ACK.
     """
-    return ack
+    Simula falhas em ACKs enviados por C.
+
+    Opções:
+    1 - Encaminhar normalmente
+    2 - Corromper ACK
+    3 - Atrasar ACK
+    4 - Dropar ACK
+
+    Retorna:
+        bytes -> ACK encaminhado para A
+        None  -> ACK descartado
+    """
+
+    print("\n===== MENU ACK =====")
+    print("1 - Encaminhar normalmente")
+    print("2 - Corromper ACK")
+    print("3 - Atrasar ACK")
+    print("4 - Dropar ACK")
+    print("====================")
+
+    opcao = input("Escolha: ")
+
+    if opcao == "1":
+        print("[B] ACK encaminhado normalmente")
+        return ack
+
+    elif opcao == "2":
+        print("[B] Corrompendo ACK")
+
+        ack_corrompido = bytearray(ack)
+
+        if len(ack_corrompido) > 0:
+            ack_corrompido[-1] ^= 0xFF
+
+        return bytes(ack_corrompido)
+
+    elif opcao == "3":
+        print(f"[B] Atrasando ACK por {ATRASO_B_MS} ms")
+
+        time.sleep(ATRASO_B_MS / 1000)
+
+        return ack
+
+    elif opcao == "4":
+        print("[B] ACK descartado")
+        return None
+
+    else:
+        print("[B] Opção inválida -> encaminhando normalmente")
+        return ack
 
 
 # ── Classe principal ──────────────────────────────────────────────────────────
