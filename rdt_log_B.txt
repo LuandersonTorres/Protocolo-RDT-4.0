@@ -1,0 +1,180 @@
+[10:40:20.446] [B] [FW] Configuração: host_A=127.0.0.1 | host_C=127.0.0.1
+[10:40:20.447] [B] [FW] Abrindo sockets UDP...
+[10:40:20.448] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[10:40:20.448] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[10:45:58.357] [B] [FW] Configuração: host_A=192.168.1.10 | host_C=192.168.1.10
+[10:45:58.357] [B] [FW] Abrindo sockets UDP...
+[10:45:58.358] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[10:45:58.358] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[10:47:42.139] [B] [FW] Configuração: host_A=192.168.1.10 | host_C=192.168.1.20
+[10:47:42.140] [B] [FW] Abrindo sockets UDP...
+[10:47:42.142] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[10:47:42.143] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[13:50:50.137] [B] [FW] Configuração: host_A=10.13.23.139 | host_C=10.13.23.140
+[13:50:50.139] [B] [FW] Abrindo sockets UDP...
+[13:50:50.141] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[13:50:50.141] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[13:52:19.401] [B] [FW] Configuração: host_A=10.13.23.139 | host_C=10.13.23.140
+[13:52:19.401] [B] [FW] Abrindo sockets UDP...
+[13:52:19.404] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[13:52:19.405] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[13:52:55.603] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:52:55.614] [B] [FW] Sockets fechados. Encerrando.
+[13:52:59.554] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:01.552] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:03.560] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:05.572] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:07.587] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:09.681] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:13.620] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:15.623] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:53:19.730] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[13:54:13.011] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=7 | ACAO=NORMAL -> encaminhado para C
+[13:54:15.007] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=7 | ACAO=NORMAL -> encaminhado para C
+[13:54:19.021] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=7 | ACAO=NORMAL -> encaminhado para C
+[13:55:41.585] [B] [FW] Configuração: host_A=10.13.23.139 | host_C=10.13.23.140
+[13:55:41.586] [B] [FW] Abrindo sockets UDP...
+[13:55:41.588] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[13:55:41.588] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[13:55:55.444] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:55:57.503] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:55:59.458] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:01.453] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:03.471] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:05.474] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:07.492] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:09.592] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:11.543] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:13.502] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:15.534] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:17.518] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:19.521] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:21.520] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:23.528] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:25.549] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:27.558] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:29.552] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:31.541] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:33.576] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:35.607] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:37.572] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:39.599] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:41.641] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:43.591] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:45.586] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:47.689] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[13:56:49.605] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=8 | ACAO=NORMAL -> encaminhado para C
+[14:15:54.777] [B] [FW] Configuração: host_A=10.13.23.139 | host_C=10.13.23.140
+[14:15:54.777] [B] [FW] Abrindo sockets UDP...
+[14:15:54.778] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[14:15:54.779] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[14:37:39.629] [B] [FW] Configuração: host_A=10.13.23.139 | host_C=10.13.23.140
+[14:37:39.630] [B] [FW] Abrindo sockets UDP...
+[14:37:39.632] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[14:37:39.633] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[15:02:02.426] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:04.411] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:06.421] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:08.430] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:10.428] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:12.466] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:14.437] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:16.444] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:18.453] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:20.458] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:22.464] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:24.467] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:26.480] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:28.482] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:30.497] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:33.978] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:36.521] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:38.527] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:40.541] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:42.544] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:44.576] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:46.557] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:48.565] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:50.581] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:52.600] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:54.607] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:56.612] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:02:58.630] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:00.628] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:02.640] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:04.650] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:06.730] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:08.672] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:10.677] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:12.690] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:14.706] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:16.714] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:18.724] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:20.725] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:22.738] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:24.764] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:26.757] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:03:28.767] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:05:39.766] [B] [FW] Configuração: host_A=10.13.23.139 | host_C=10.13.23.140
+[15:05:39.767] [B] [FW] Abrindo sockets UDP...
+[15:05:39.769] [B] [FW] Bind concluído: dados em :9000 | ACKs em :9002
+[15:05:39.769] [B] [FW] Simulador B iniciado — aguardando datagramas...
+[15:05:53.745] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:05:55.796] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:05:57.765] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:05:59.770] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:01.783] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:03.788] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:05.806] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:07.814] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:09.831] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:11.821] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:13.830] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:15.833] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:17.838] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:19.848] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:21.852] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:23.952] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:25.873] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:27.957] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:29.900] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:31.930] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:33.945] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:35.950] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:37.964] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:39.966] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:41.974] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:44.025] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:45.985] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:47.992] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:50.013] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:52.019] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:54.025] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:56.043] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:06:58.047] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:00.060] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:02.153] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:04.079] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:06.149] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:08.109] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:10.142] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:12.125] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:14.132] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:16.141] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:18.154] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:20.158] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:22.166] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:24.177] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:26.189] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:28.196] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:30.207] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:32.208] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:34.217] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:36.232] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:38.241] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:40.260] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:42.262] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:44.272] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:46.283] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:48.296] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
+[15:07:50.300] [B] [FW] SEQ=0 | FLAGS=0x90 | LEN=5 | ACAO=NORMAL -> encaminhado para C
