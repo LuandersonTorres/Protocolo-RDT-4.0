@@ -15,7 +15,7 @@ public final class RdtConstants {
     public static final int SEQ_INICIAL  = 0;       // alteravel SO no teste I14
     public static final int HEADER_SIZE  = 7;       // bytes do cabecalho fixo
     public static final int MAX_PAYLOAD  = 1400;    // maximo de bytes de payload
-    public static final int TIMEOUT_MS   = 2000;    // timeout do timer unico de A
+    public static final int TIMEOUT_MS   = 15000;    // timeout do timer unico de A
     public static final int ATRASO_B_MS  = 3000;    // atraso aplicado pelo menu de B
 
     public static final int FLAG_DATA = 0x80;       // pacote de dados (fragmento intermediario)
