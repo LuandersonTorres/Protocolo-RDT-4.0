@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDT 4.0 — Dispositivo C</title>
+    <style>
+        :root {
+            --bg: #0f1714;
+            --panel: #16211c;
+            --panel-border: #2a3a32;
+            --text: #e7f0ea;
+            --muted: #7f9488;
+            --accent: #5ee6a8;
+            --accent-dim: #2f6b4f;
+            --rx: #5ee6a8;
+            --ack: #6fb3ff;
+            --msg: #ffd166;
+            --err: #ff6b6b;
+            --warn: #ffb74d;
+            --mono: "JetBrains Mono", "Courier New", monospace;
+            --sans: "Inter", "Segoe UI", Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .painel {
+            width: 100%;
+            max-width: 860px;
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+
+        .cabecalho {
+            padding: 22px 26px 18px;
+            border-bottom: 1px solid var(--panel-border);
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cabecalho h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--accent);
+        }
+
+        .cabecalho h1 span {
+            color: var(--text);
+            font-weight: 400;
+            font-size: 0.95rem;
+            display: block;
+            margin-top: 4px;
+            font-family: var(--mono);
+            letter-spacing: 0;
+            color: var(--muted);
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .status .ponto {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--err);
+            box-shadow: 0 0 0 0 rgba(255,107,107, 0.5);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .status.conectado .ponto {
+            background: var(--accent);
+            animation: pulso 2s infinite;
+        }
+
+        @keyframes pulso {
+            0%   { box-shadow: 0 0 0 0 rgba(94, 230, 168, 0.45); }
+            70%  { box-shadow: 0 0 0 6px rgba(94, 230, 168, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(94, 230, 168, 0); }
+        }
+
+        .corpo {
+            padding: 22px 26px 26px;
+        }
+
+        .ultima-mensagem {
+            border: 1px dashed var(--accent-dim);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+            min-height: 52px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .ultima-mensagem.recebida {
+            border-color: var(--msg);
+            background: rgba(255, 209, 102, 0.06);
+        }
+
+        .ultima-mensagem .rotulo {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .ultima-mensagem .conteudo {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            word-break: break-word;
+        }
+
+        .ultima-mensagem .conteudo.vazio {
+            color: var(--muted);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        h3.titulo-log {
+            margin: 0 0 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .terminal {
+            background: #08100c;
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            padding: 14px 16px;
+            height: 360px;
+            overflow-y: auto;
+        }
+
+        .terminal .linha {
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .terminal .linha.placeholder { color: var(--muted); }
+        .terminal .linha.rx  { color: var(--rx); }
+        .terminal .linha.ack { color: var(--ack); }
+        .terminal .linha.msg { color: var(--msg); font-weight: 700; }
+        .terminal .linha.err { color: var(--err); }
+        .terminal .linha.warn { color: var(--warn); }
+
+        .legenda {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        .legenda .item { display: flex; align-items: center; gap: 6px; }
+        .legenda .ponto-legenda {
+            width: 8px; height: 8px; border-radius: 2px;
+        }
+        .legenda .rx  { background: var(--rx); }
+        .legenda .ack { background: var(--ack); }
+        .legenda .msg { background: var(--msg); }
+        .legenda .err { background: var(--err); }
+        .legenda .warn { background: var(--warn); }
+
+        /* Scrollbar discreta */
+        .terminal::-webkit-scrollbar { width: 8px; }
+        .terminal::-webkit-scrollbar-thumb {
+            background: var(--panel-border);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 560px) {
+            .cabecalho { flex-direction: column; align-items: flex-start; }
+            .terminal { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <div class="cabecalho">
+            <h1>
+                RDT 4.0 — Dispositivo C
+                <span>Destinatário · valida checksum, detecta duplicados, entrega mensagens</span>
+            </h1>
+            <div class="status" id="status">
+                <span class="ponto"></span>
+                <span id="status-texto">conectando...</span>
+            </div>
+        </div>
+
+        <div class="corpo">
+
+            <div class="ultima-mensagem" id="caixa-mensagem">
+                <span class="rotulo">Última mensagem recebida</span>
+                <span class="conteudo vazio" id="texto-mensagem">Nenhuma mensagem recebida ainda.</span>
+            </div>
+
+            <h3 class="titulo-log">Eventos em tempo real</h3>
+            <div class="terminal" id="logs">
+                <div class="linha placeholder">[Aguardando conexão com o Dispositivo C em ws://127.0.0.1:8081 ...]</div>
+            </div>
+
+            <div class="legenda">
+                <span class="item"><span class="ponto-legenda rx"></span> RX / OK — pacote aceito</span>
+                <span class="item"><span class="ponto-legenda ack"></span> ACK — confirmação enviada</span>
+                <span class="item"><span class="ponto-legenda msg"></span> MSG — mensagem entregue</span>
+                <span class="item"><span class="ponto-legenda warn"></span> OOO / IGN — fora de ordem / ignorado</span>
+                <span class="item"><span class="ponto-legenda err"></span> ER / CE — erro / checksum inválido</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const elLogs = document.getElementById('logs');
+        const elStatus = document.getElementById('status');
+        const elStatusTexto = document.getElementById('status-texto');
+        const elMensagemCaixa = document.getElementById('caixa-mensagem');
+        const elMensagemTexto = document.getElementById('texto-mensagem');
+
+        let placeholderRemovido = false;
+
+        function classificarLinha(linha) {
+            if (linha.includes('[RX]') || linha.includes('[OK]') || linha.includes('[PKT]')) return 'rx';
+            if (linha.includes('[ACK]')) return 'ack';
+            if (linha.includes('[MSG]')) return 'msg';
+            if (linha.includes('[ER]') || linha.includes('[CE]')) return 'err';
+            if (linha.includes('[OOO]') || linha.includes('[IGN]') || linha.includes('[DU]') || linha.includes('[FO]')) return 'warn';
+            return '';
+        }
+
+        function adicionarLinha(texto, classe) {
+            if (!placeholderRemovido) {
+                elLogs.innerHTML = '';
+                placeholderRemovido = true;
+            }
+            const div = document.createElement('div');
+            div.className = 'linha' + (classe ? (' ' + classe) : '');
+            div.textContent = texto;
+            elLogs.appendChild(div);
+            elLogs.scrollTop = elLogs.scrollHeight;
+        }
+
+        function conectar() {
+            const ws = new WebSocket('ws://127.0.0.1:8081');
+
+            ws.onopen = () => {
+                elStatus.classList.add('conectado');
+                elStatusTexto.textContent = 'conectado';
+                adicionarLinha('[Conectado ao Dispositivo C — aguardando pacotes de B]', 'rx');
+            };
+
+            ws.onmessage = (event) => {
+                const data = event.data;
+
+                if (data.startsWith('__MSG__')) {
+                    const msg = data.slice('__MSG__'.length);
+                    elMensagemTexto.textContent = msg;
+                    elMensagemTexto.classList.remove('vazio');
+                    elMensagemCaixa.classList.add('recebida');
+                    return;
+                }
+
+                adicionarLinha(data, classificarLinha(data));
+            };
+
+            ws.onclose = () => {
+                elStatus.classList.remove('conectado');
+                elStatusTexto.textContent = 'desconectado — tentando reconectar...';
+                adicionarLinha('[Conexão perdida com o Dispositivo C]', 'err');
+                setTimeout(conectar, 2000);
+            };
+
+            ws.onerror = () => {
+                ws.close();
+            };
+        }
+
+        conectar();
+    </script>
+</body>
+</html>
